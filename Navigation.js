@@ -8,7 +8,7 @@ import HomeScreen from "./screens/HomeScreen";
 import SettingScreen from "./screens/SettingScreen";
 import StackScreen from "./screens/StackScreen";
 
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { MaterialIcons } from '@expo/vector-icons'; 
 
 const HomeStackNavigator = createNativeStackNavigator();
 
@@ -53,7 +53,7 @@ function MyTabs(){
             options={{
                 tabBarLabel:'Feed',
                 tabBarIcon:({color,size}) => (
-                  <MaterialCommunityIcons name="home" color={color} size={30} />
+                  <MaterialIcons name="home" color={color} size={30} />
                 ),
                 tabBarBadge: 10,
                 headerShown:false 
@@ -65,7 +65,7 @@ function MyTabs(){
              options={{
                 tabBarLabel:'Settings',
                 tabBarIcon:({color,size}) => (
-                  <MaterialCommunityIcons name="brightness-5" color={color} size={30} />
+                  <MaterialIcons name="brightness-5" color={color} size={30} />
                 ),
                 headerShown:false
             }}
