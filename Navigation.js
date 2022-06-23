@@ -1,7 +1,8 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer,useNavigationContainerRef } from "@react-navigation/native";
+import { useFlipper } from '@react-navigation/devtools'; 
 
 //screens
 import HomeScreen from "./screens/HomeScreen";
@@ -75,8 +76,12 @@ function MyTabs(){
 }
 
 export default function Navigation(){
+    const navigationRef = useNavigationContainerRef();
+     
+    useFlipper(navigationRef);
+
     return(
-        <NavigationContainer>
+        <NavigationContainer ref={navigationRef}>
            <MyTabs/>
         </NavigationContainer>
     )
